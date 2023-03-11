@@ -1,10 +1,10 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ app }) => {
   return (
     <header class="bg-gray-900 text-white py-4">
       <div class="container mx-auto flex justify-between items-center px-4">
-        <h1 class="text-3xl font-bold tracking-wider">Logo</h1>
+        <h1 class="text-3xl font-bold tracking-wider">{app.name}</h1>
         <nav class="hidden md:block">
           <ul class="flex space-x-6">
             <li>
