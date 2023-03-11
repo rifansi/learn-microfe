@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Footer from "./Footer";
+import Header from "./Header";
 
 import "./index.scss";
 
 const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: home</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Tailwind</div>
+  <div className="flex flex-col min-h-screen max-w-7xl mx-auto">
+    <Header></Header>
+    <main className="container mx-auto py-8 px-4 flex-1">body</main>
+    <Footer className="self-end"></Footer>
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));
