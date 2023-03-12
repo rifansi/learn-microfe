@@ -9,4 +9,16 @@ export class ProductsController {
   async index(): Promise<Product[]> {
     return products;
   }
+
+  @Get(':id')
+  async findById(@Param('id') id: string): Promise<Product> {
+    const productId = parseInt(id);
+    const product = products.find((p) => p.id === productId);
+
+    if (!product) {
+      throw new Error(`Product with ID ${id} not found`);
+    }
+
+    return product;
+  }
 }
