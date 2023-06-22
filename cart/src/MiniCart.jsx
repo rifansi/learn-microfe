@@ -15,7 +15,7 @@ export default function MiniCart() {
     return cart.subscribe((v) => setItems(v?.items));
   }, []);
 
-  if (!items?.length) return null;
+  //   if (!items?.length) return null;
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function MiniCart() {
         <i className="ri-shopping-cart-line text-2xl" id="showcart"></i>
       </span>
       {showCart && (
-        <div className="relative">
+        <div className="relative z-50">
           <div className="absolute right-0 mt-2 bg-white rounded-lg p-8 shadow-lg">
             <h2 className="text-2xl font-bold mb-4">Cart</h2>
             <>

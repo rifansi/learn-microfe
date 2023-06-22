@@ -1,26 +1,20 @@
 import React from "react";
 
+import MiniCart from "cart/MiniCart";
+import Login from "cart/Login";
+
 const Header = ({ app }) => {
   return (
-    <header className="bg-gray-900 text-white py-4">
+    <header className="bg-gray-100 py-4">
       <div className="container mx-auto flex justify-between items-center px-4">
         <h1 className="text-3xl font-bold tracking-wider">{app.name}</h1>
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
             <li>
-              <a href="#" className="hover:text-gray-400 font-medium">
-                Home
-              </a>
+              <Login />
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400 font-medium">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-400 font-medium">
-                Contact
-              </a>
+              <MiniCart />
             </li>
           </ul>
         </nav>

@@ -17,7 +17,7 @@ export default function Login() {
         <i className="ri-fingerprint-line text-2xl" id="showlogin"></i>
       </span>
       {showLogin && (
-        <div className="fixed inset-0 flex justify-center items-center">
+        <div className="fixed inset-0 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg p-8 shadow-lg">
             <h2 className="text-2xl font-bold mb-4">Login</h2>
             <form className="flex flex-col">
