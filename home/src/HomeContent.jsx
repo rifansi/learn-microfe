@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import { getProducts, currency } from "./products";
+import { addToCart, useLoggedIn } from "cart/cart";
 
 export default function HomeContent() {
   const [products, setProducts] = useState([]);
+  const loggedIn = useLoggedIn();
 
   useEffect(() => {
     getProducts().then((data) => {
@@ -32,6 +34,14 @@ export default function HomeContent() {
                 <p className="text-gray-600">
                   {currency.format(product.price)}
                 </p>
+                {loggedIn && (
+                  <button
+                    onClick={() => addToCart(product.id)}
+                    className="bg-blue-500 text-white py-2 px-4 rounded mt-4 hover:bg-blue-600 focus:outline-none"
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </div>
             </div>
           ))}

@@ -48,7 +48,8 @@ export class CartController {
     if (cartItem) {
       cartItem.quantity++;
     } else {
-      cart.items.push({ ...products[parseInt(id)], quantity: 1 });
+      const product = products.find((product) => product.id === parseInt(id));
+      cart.items.push({ ...product, quantity: 1 });
     }
     return cart;
   }
