@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { getProducts, currency } from "./products";
 import { addToCart, useLoggedIn } from "cart/cart";
@@ -23,14 +24,18 @@ export default function HomeContent() {
               key={product.id}
             >
               <div className="relative pb-2/3 " style={{ minHeight: "200px" }}>
-                <img
-                  className="absolute h-full w-full object-cover"
-                  src={product.image}
-                  alt={product.name}
-                />
+                <Link to={`/products/${product.id}`}>
+                  <img
+                    className="absolute h-full w-full object-cover"
+                    src={product.image}
+                    alt={product.name}
+                  />
+                </Link>
               </div>
               <div className="p-4">
-                <h3 className="font-medium text-gray-900">{product.name}</h3>
+                <h3 className="font-medium text-gray-900">
+                  <Link to={`/products/${product.id}`}>{product.name}</Link>
+                </h3>
                 <p className="text-gray-600">
                   {currency.format(product.price)}
                 </p>

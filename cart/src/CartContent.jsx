@@ -5,7 +5,9 @@ import MiniCart from "./MiniCart";
 
 export default function CartContent() {
   const [token, setToken] = useState("");
-  useEffect(() => jwt.subscribe((t) => setToken(t)), []);
+  useEffect(() => {
+    jwt.subscribe((t) => setToken(t));
+  }, []);
 
   return (
     <div className="mt-10 text-3xl mx-auto max-w-6xl">
